@@ -47,8 +47,8 @@ Quando o dedo toca, a rede ciano embaixo do vidro acende no ponto certo e surge 
 Descoberta: o corpo conduz eletricidade e a rede da tela sente esse toque. Final: a criança arrasta a estrela até a constelação, e a tela vira um mapa com um pontinho azul.
 
 **Fase 5 — O mapa sabe onde estou?**
-A criança arrasta três satélites fofos pelo céu. Cada um solta um círculo de ondas ciano. Com um só satélite o pontinho azul fica perdido; com dois fica em dúvida; com três os círculos se cruzam e o pontinho acende.
-Descoberta: o tablet escuta três satélites e calcula onde está. Depois a criança anda com a Zig pela varanda e o pontinho anda junto. Final: chega uma mensagem sem fio.
+A criança arrasta três satélites fofos para o céu da cidade, sobre o mesmo mapa do Ep 04. Cada um solta um círculo de ondas ciano, do tamanho da distância até o tablet. Com um só satélite o pontinho azul fica perdido; com dois fica em dúvida (pisca em dois lugares); com três espalhados os círculos se cruzam num ponto só e o pontinho acende. Mudar um satélite de lugar muda os círculos, mas não o pontinho.
+Descoberta: o tablet escuta três satélites e calcula onde está. Depois a criança leva o tablet pela varanda e o pontinho anda junto, com os círculos se ajustando. Final: chega uma mensagem sem fio.
 
 **Fase 6 — O Wi-Fi é invisível?**
 A criança liga um "óculos mágico" da Zig que mostra as ondas do roteador. Ela coloca paredes, uma porta e um armário no caminho e vê o sinal ficar mais forte ou mais fraco.

@@ -26,7 +26,8 @@ npm run arte     # quais artes oficiais já estão em public/arte/
 | 2 | O robô vê no escuro? | Jogável (versão sem lanterna, com eco), com marcadores |
 | 3 | Quem mora dentro da tela? | Jogável, com marcadores |
 | 4 | Por que a tela me escuta? | Jogável, com marcadores |
-| 5–6 | | "Em breve" (entram com seus episódios) |
+| 5 | O mapa sabe onde estou? | Jogável, com marcadores |
+| 6 | O Wi-Fi é invisível? | "Em breve" (entra com o episódio) |
 
 As fases abrem em ordem: cada uma abre quando a anterior ganha a estrela de descoberta.
 

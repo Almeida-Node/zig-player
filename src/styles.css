@@ -1041,3 +1041,221 @@ body {
 .f3-tool .placeholder-what {
   display: none;
 }
+
+/* ---------- Fase 5 ---------- */
+.f5-scene {
+  position: absolute;
+  inset: 0;
+}
+
+.f5-dock {
+  position: absolute;
+  left: 3cqw;
+  top: 11cqh;
+  width: 64cqw;
+  height: 14cqh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms;
+  z-index: 5;
+}
+
+.f5-dock.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.f5-dock.parked {
+  opacity: 0; /* na resposta, os satélites ficam no céu do mapa */
+}
+
+.f5-sat {
+  width: 18cqw;
+  height: 18cqw;
+  touch-action: none;
+  cursor: grab;
+  animation: nudge 1.8s ease-in-out infinite;
+}
+
+.f5-sat.flying {
+  animation: none;
+  filter: drop-shadow(0 1.5cqw 1cqw rgb(0 0 0 / 0.45));
+}
+
+.f5-sat.dragging {
+  animation: none;
+}
+
+.f5-sat .slot {
+  width: 100%;
+  height: 100%;
+}
+
+.f5-sat .placeholder-what,
+.f5-sat .placeholder-file {
+  display: none;
+}
+
+.f5-tablet {
+  position: absolute;
+  left: 6cqw;
+  top: 26cqh;
+  width: 60cqw;
+  height: 80cqw; /* 3:4, igual ao viewBox 60×80 */
+}
+
+.f5-tablet-img {
+  position: absolute;
+  inset: 0;
+}
+
+.f5-glass-area {
+  position: absolute;
+  inset: 6%;
+  border-radius: 2cqw;
+  overflow: hidden;
+  background: #26335f;
+}
+
+.f5-map {
+  position: absolute;
+  inset: 0;
+}
+
+.f5-map img {
+  object-fit: cover;
+}
+
+.f5-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.f5-circle {
+  fill: none;
+  stroke: var(--cyan);
+  stroke-width: 0.55;
+  stroke-dasharray: 1.4 0.9;
+  filter: drop-shadow(0 0 0.7px var(--cyan));
+}
+
+.f5-center {
+  fill: var(--cyan);
+}
+
+.f5-pulse {
+  fill: none;
+  stroke: var(--cyan);
+  stroke-width: 0.9;
+}
+
+.f5-ghost {
+  fill: #3b82f6;
+  opacity: 0.45;
+}
+
+.f5-ghost.doubt {
+  animation: blink 0.9s ease-in-out infinite alternate;
+  opacity: 0.7;
+}
+
+.f5-dot {
+  opacity: 0;
+  transition: opacity 400ms;
+}
+
+.f5-dot.on {
+  opacity: 1;
+}
+
+.f5-dot-core {
+  fill: #3b82f6;
+  stroke: #fff;
+  stroke-width: 0.8;
+}
+
+.f5-dot-ring {
+  fill: rgb(59 130 246 / 0.25);
+}
+
+.f5-goal polygon {
+  fill: var(--gold);
+  filter: drop-shadow(0 0 1px #fff3b0);
+}
+
+.f5-walker {
+  position: absolute;
+  width: 14cqw;
+  height: 14cqw;
+  margin: -7cqw 0 0 -7cqw;
+  display: grid;
+  place-items: center;
+  font-size: 8cqw;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.25);
+  box-shadow: 0 0 0 0.8cqw var(--cyan);
+  touch-action: none;
+  cursor: grab;
+  z-index: 3;
+}
+
+.f5-walker.done {
+  box-shadow: 0 0 0 0.8cqw var(--gold);
+}
+
+.f5-envelope {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 26cqw;
+  translate: -50% -50%;
+  animation: pop-in 600ms cubic-bezier(0.2, 1.6, 0.4, 1) both;
+  z-index: 4;
+}
+
+.f5-envelope rect {
+  fill: #fff;
+  stroke: var(--navy);
+  stroke-width: 1;
+}
+
+.f5-envelope path {
+  fill: none;
+  stroke: var(--navy);
+  stroke-width: 1;
+}
+
+.phase:has(.f5-scene) .caption {
+  top: 73cqh;
+}
+
+.f5-sat-mini {
+  position: absolute;
+  width: 11cqw;
+  height: 11cqw;
+  margin: -5.5cqw 0 0 -5.5cqw;
+  z-index: 2;
+  filter: drop-shadow(0 1cqw 0.8cqw rgb(0 0 0 / 0.45));
+}
+
+.f5-sat-mini .slot {
+  width: 100%;
+  height: 100%;
+}
+
+.f5-sat-mini .placeholder-what,
+.f5-sat-mini .placeholder-file {
+  display: none;
+}
+
+.f5-ghost.edge {
+  stroke: #fff;
+  stroke-width: 0.5;
+  stroke-dasharray: 0.8 0.6;
+}

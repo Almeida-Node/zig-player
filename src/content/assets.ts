@@ -205,6 +205,25 @@ export const ASSETS = {
     source: "Drive: Ep-04-por-que-a-tela-me-escuta/producao-ep04/clipes/",
   },
 
+  // Fase 5 — O mapa sabe onde estou? (varanda, mesmo tablet e mapa do Ep 04)
+  "f5-cenario": { kind: "image", file: "fase05/cenario.png", what: "Varanda aberta do laboratório, céu limpo de fim de tarde, SEM a Zig", source: "Prompt F5-1" },
+  "f5-satelite": { kind: "image", file: "fase05/satelite.png", what: "Satélite pequeno e fofo do Ep 05, fundo transparente", source: "Prompt F5-2" },
+  "f5-clipe-pergunta": { kind: "video", file: "fase05/ep05-clipe1-pergunta.mp4", what: "Clipe 1 do Ep 05", source: "Drive: Ep-05-o-mapa-sabe-onde-estou/producao-ep05/clipes/ep05-clipe1-pergunta.mp4" },
+  "f5-clipe-descoberta": { kind: "video", file: "fase05/ep05-clipe2-descoberta.mp4", what: "Clipe 2 do Ep 05", source: "Drive: Ep-05-o-mapa-sabe-onde-estou/producao-ep05/clipes/ep05-clipe2-descoberta.mp4" },
+  "f5-clipe-resposta": { kind: "video", file: "fase05/ep05-clipe3-resposta.mp4", what: "Clipe 3 do Ep 05", source: "Drive: Ep-05-o-mapa-sabe-onde-estou/producao-ep05/clipes/ep05-clipe3-resposta.mp4" },
+  "f5-voz-pergunta": { kind: "audio", file: "fase05/voz-pergunta.mp3", what: "Fala 1 do Ep 05", source: "Áudio do clipe 1 do Ep 05" },
+  "f5-voz-arraste": { kind: "audio", file: "fase05/voz-arraste.mp3", what: "Fala: leve os satélites", source: "Prompt V (Flow)" },
+  "f5-voz-um": { kind: "audio", file: "fase05/voz-um.mp3", what: "Fala: um satélite", source: "Prompt V (Flow)" },
+  "f5-voz-dois": { kind: "audio", file: "fase05/voz-dois.mp3", what: "Fala: dois satélites", source: "Prompt V (Flow)" },
+  "f5-voz-espalhe": { kind: "audio", file: "fase05/voz-espalhe.mp3", what: "Fala: espalhe os satélites", source: "Prompt V (Flow)" },
+  "f5-voz-mova": { kind: "audio", file: "fase05/voz-mova.mp3", what: "Fala: mude um satélite", source: "Prompt V (Flow)" },
+  "f5-voz-mesmo-lugar": { kind: "audio", file: "fase05/voz-mesmo-lugar.mp3", what: "Fala: o pontinho não sai do lugar", source: "Prompt V (Flow)" },
+  "f5-voz-descoberta": { kind: "audio", file: "fase05/voz-descoberta.mp3", what: "Fala 2 do Ep 05", source: "Áudio do clipe 2 do Ep 05" },
+  "f5-voz-anda": { kind: "audio", file: "fase05/voz-anda.mp3", what: "Fala 3 do Ep 05, primeira parte", source: "Áudio do clipe 3 do Ep 05" },
+  "f5-voz-leve-tablet": { kind: "audio", file: "fase05/voz-leve-tablet.mp3", what: "Fala: leve o tablet", source: "Prompt V (Flow)" },
+  "f5-voz-mensagem": { kind: "audio", file: "fase05/voz-mensagem.mp3", what: "Fala 3 do Ep 05, segunda parte", source: "Áudio do clipe 3 do Ep 05" },
+  "f5-voz-desafio": { kind: "audio", file: "fase05/voz-desafio.mp3", what: "Fala: desafio em casa do Ep 05", source: "Comentário fixado do post do Ep 05 (Prompt V)" },
+
   // Falas (mesmo Elemento de voz do Flow). Veja src/content/falas.ts.
   "voz-comecar": { kind: "audio", file: "comum/voz-comecar.mp3", what: "Fala: começar", source: "Prompt V (Flow)" },
   "voz-hum": { kind: "audio", file: "comum/voz-hum.mp3", what: "Fala: não foi dessa vez", source: "Prompt V (Flow)" },

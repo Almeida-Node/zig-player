@@ -99,6 +99,18 @@ As três cores fortes importam: a criança procura o vermelho, o verde e o azul 
 **F3-3 — `fase03/lupa.png`**
 > A mesma lupa do Ep 03, sozinha, com o vidro redondo no **alto à esquerda** e o cabo descendo para a direita, vidro transparente. **Fundo transparente (PNG).** Quadrado 1:1, 768×768.
 
+### Fase 5 — O mapa sabe onde estou? (varanda, satélites)
+
+A Fase 5 **reaproveita o tablet (F4-2) e o mapa (F4-7) da Fase 4**: é o mesmo objeto de continuidade dos episódios. Só faltam duas imagens.
+
+**F5-1 — `fase05/cenario.png`**
+> [CABEÇALHO FIXO] Sem a Zig nesta imagem. A varanda aberta do laboratório da Zig do Ep 05, céu limpo de fim de tarde ocupando a parte de cima, mesinha de madeira clara, luz quente. O centro fica livre (o jogo coloca o tablet por cima). Formato vertical 9:16, 1080×1920.
+
+**F5-2 — `fase05/satelite.png`**
+> Um satélite pequeno e fofo, igual aos do Ep 05: corpo redondinho, dois painéis solares, uma antena, sem letras nem logotipos. Estilo 3D da série, luz quente. **Fundo transparente (PNG).** Quadrado 1:1, 768×768.
+
+O jogo usa o mesmo satélite três vezes. Os círculos de ondas ciano são desenhados pelo código.
+
 ### Fase 4 — Por que a tela me escuta?
 
 Anexe também `ep04-clipe1-ultimo-frame.png`, para manter a mesma madeira, as mesmas cores e a mesma luz.
@@ -188,6 +200,11 @@ Nos Ep 01 e Ep 03, recorte da mesma forma:
 | `fase03/voz-pixels.mp3` | "Muitos pontinhos de luz, chamados pixels, formam o que vemos." | clipe 2 do Ep 03 |
 | `fase03/voz-resposta.mp3` | "De perto são pontos; de longe, uma borboleta!" | clipe 3 do Ep 03 |
 
+| `fase05/voz-pergunta.mp3` | "O pontinho azul sou eu! Mas como o mapa sabe onde eu estou?" | clipe 1 do Ep 05 |
+| `fase05/voz-descoberta.mp3` | "Lá no céu, satélites mandam sinais. O tablet escuta três deles e descobre onde eu estou!" | clipe 2 do Ep 05 |
+| `fase05/voz-anda.mp3` | "Eu ando, e o pontinho anda comigo!" | clipe 3 do Ep 05, 1ª frase |
+| `fase05/voz-mensagem.mp3` | "Ué… e essa mensagem chegou sem fio?" | clipe 3 do Ep 05, 2ª frase |
+
 Se o áudio publicado não bater palavra por palavra com o texto, gere a fala de novo no Flow (prompt V abaixo).
 
 **2. Falas novas do jogo.** Prompt V no Flow, com P0 como quadro inicial:
@@ -227,6 +244,14 @@ Depois é só extrair o áudio (`-vn`, com o mesmo `loudnorm`). Dá para pôr **
 | `fase03/voz-tres-cores.mp3` | "Só vermelho, verde e azul! Juntinhos, fazem todas as cores." |
 | `fase03/voz-afaste.mp3` | "Agora afaste a lupa bem devagar." |
 | `fase03/voz-desafio.mp3` | "Com um adulto, olhe a tela da TV ou do celular com uma lupa, bem de pertinho. Que cores você viu?" |
+| `fase05/voz-arraste.mp3` | "Leve os satélites para o céu da cidade!" |
+| `fase05/voz-um.mp3` | "Com um satélite só, o pontinho fica perdido." |
+| `fase05/voz-dois.mp3` | "Com dois, ele ainda fica em dúvida…" |
+| `fase05/voz-espalhe.mp3` | "Hum… tente espalhar mais os satélites!" |
+| `fase05/voz-mova.mp3` | "Mude um satélite de lugar!" |
+| `fase05/voz-mesmo-lugar.mp3` | "Os círculos mudam, mas o pontinho não sai do lugar: é onde o tablet está!" |
+| `fase05/voz-leve-tablet.mp3` | "Agora leve o tablet até a estrela!" |
+| `fase05/voz-desafio.mp3` | "Com um adulto, abram o mapa no celular e deem uma volta no quintal ou na calçada. O pontinho azul andou junto com vocês?" |
 | `fase04/voz-testar.mp3` | "Vamos testar! Leve cada coisa até a tela, ou toque com o seu dedo." |
 | `fase04/voz-leve-estrela.mp3` | "Leve a estrela até as amigas dela lá em cima!" |
 | `fase04/voz-desafio.mp3` | "Com um adulto, toque a tela do celular com o dedo e depois com a ponta de madeira de um lápis. O que aconteceu?" |
@@ -244,6 +269,7 @@ As falas comuns servem para todas as fases. Cada fase nova precisa só das suas 
 | `fase01/ep01-clipe3-resposta.mp4` | `FOTOS/EPISODIO-01-como a IA aprende/raposa-exibe-cartoes-resposta.mp4` |
 | `fase02/ep02-clipe{1,2,3}-*.mp4` | **refazer sem lanterna** (ver Fase 2 acima) |
 | `fase03/ep03-clipe{1,2,3}-*.mp4` | clipes brutos no computador (`Tik-tok/professora-zig-ep-02/`, segundo o CONTEXTO-ZIG) |
+| `fase05/ep05-clipe{1,2,3}-*.mp4` | `Ep-05-o-mapa-sabe-onde-estou/producao-ep05/clipes/` (as versões **sem** `-v1`) |
 | `fase04/ep04-clipe1-pergunta.mp4` | `Ep-04-por-que-a-tela-me-escuta/producao-ep04/clipes/` |
 | `fase04/ep04-clipe2-descoberta.mp4` | idem |
 | `fase04/ep04-clipe3-resposta.mp4` | idem |

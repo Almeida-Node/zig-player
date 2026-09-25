@@ -114,6 +114,36 @@ export const FALAS = {
     audio: "f3-voz-desafio",
   },
 
+  // Fase 5 — falas literais do Ep 05 (producao-ep05/01-roteiro.md)
+  f5Pergunta: {
+    text: "O pontinho azul sou eu! Mas como o mapa sabe onde eu estou?",
+    highlight: "pontinho",
+    audio: "f5-voz-pergunta",
+  },
+  f5Arraste: { text: "Leve os satélites para o céu da cidade!", highlight: "satélites", audio: "f5-voz-arraste" },
+  f5Um: { text: "Com um satélite só, o pontinho fica perdido.", highlight: "perdido", audio: "f5-voz-um" },
+  f5Dois: { text: "Com dois, ele ainda fica em dúvida…", highlight: "dúvida", audio: "f5-voz-dois" },
+  f5Espalhe: { text: "Hum… tente espalhar mais os satélites!", highlight: "espalhar", audio: "f5-voz-espalhe" },
+  f5Mova: { text: "Mude um satélite de lugar!", highlight: "satélite", audio: "f5-voz-mova" },
+  f5MesmoLugar: {
+    text: "Os círculos mudam, mas o pontinho não sai do lugar: é onde o tablet está!",
+    highlight: "tablet",
+    audio: "f5-voz-mesmo-lugar",
+  },
+  f5Descoberta: {
+    text: "Lá no céu, satélites mandam sinais. O tablet escuta três deles e descobre onde eu estou!",
+    highlight: "três",
+    audio: "f5-voz-descoberta",
+  },
+  f5Anda: { text: "Eu ando, e o pontinho anda comigo!", highlight: "anda", audio: "f5-voz-anda" },
+  f5LeveTablet: { text: "Agora leve o tablet até a estrela!", highlight: "tablet", audio: "f5-voz-leve-tablet" },
+  f5Mensagem: { text: "Ué… e essa mensagem chegou sem fio?", highlight: "fio", audio: "f5-voz-mensagem" },
+  f5Desafio: {
+    text: "Com um adulto, abram o mapa no celular e deem uma volta no quintal ou na calçada. O pontinho azul andou junto com vocês?",
+    highlight: "pontinho",
+    audio: "f5-voz-desafio",
+  },
+
   // Fase 4 — falas literais do Ep 04 (EP04-guia-de-producao.md)
   f4Pergunta: {
     text: "Eu toquei aqui e a estrela apareceu! Como a tela sabe onde eu toquei?",
