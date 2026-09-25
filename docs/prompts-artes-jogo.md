@@ -262,6 +262,15 @@ As falas comuns servem para todas as fases. Cada fase nova precisa só das suas 
 
 ## Arquivos que já existem no Drive (só copiar)
 
+Já estão no jogo, comprimidos em 720p: os clipes do Ep 01, os três do Ep 04, o clipe 1 do Ep 05, a
+vinheta e o retrato oficial (`Persona/foto-perfil.png` → `zig/zig-rosto.png`, usado na bolha e no
+início até chegarem os movimentos e a Zig acenando). As falas "pergunta" do Ep 04 e do Ep 05 foram
+recortadas dos próprios clipes. **Faltam os clipes 2 e 3 do Ep 05:** têm 7–8 MB e o conector do Drive
+cai ao baixá-los. Envie por aqui ou deixe uma versão menor no Drive.
+
+A imagem de referência (`Persona/professora-zig.png`) e a prancha com as 6 vistas estão em
+`docs/referencia/`, para anexar nos prompts.
+
 | Destino em `public/arte/` | Origem no Drive (PROFESSORA-ZIG) |
 |---|---|
 | `fase01/ep01-clipe1-pergunta.mp4` | `FOTOS/EPISODIO-01-como a IA aprende/pergunta.mp4` |

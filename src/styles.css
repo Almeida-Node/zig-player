@@ -109,6 +109,20 @@ body {
   margin: 1cqh 0;
 }
 
+/* Retrato oficial (fundo branco) como medalha redonda, até chegar a Zig acenando. */
+.home-zig.fallback {
+  width: 56cqw;
+  height: 56cqw;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 0 1.4cqw var(--gold), 0 0 0 3cqw var(--navy);
+}
+
+.home-zig.fallback img {
+  object-fit: cover;
+}
+
 .collection {
   display: flex;
   flex-wrap: wrap;
@@ -257,6 +271,19 @@ body {
   display: none;
 }
 
+.zig-bubble-face {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 40%;
+  background: #fff;
+  scale: 1.5; /* a foto de perfil tem muita margem branca */
+}
+
+.zig-bubble.bounce {
+  animation: nudge 600ms ease;
+}
+
 .zig-bubble-reaction {
   position: absolute;
   bottom: 12%;
@@ -267,7 +294,20 @@ body {
   color: var(--gold);
 }
 
-.zig-bubble:not(.missing) .zig-bubble-reaction {
+.zig-bubble:not(.missing) .zig-bubble-face {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 40%;
+  background: #fff;
+  scale: 1.5; /* a foto de perfil tem muita margem branca */
+}
+
+.zig-bubble.bounce {
+  animation: nudge 600ms ease;
+}
+
+.zig-bubble-reaction {
   display: none;
 }
 

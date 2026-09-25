@@ -16,13 +16,23 @@ export function placeholder(id: AssetId): HTMLElement {
   ]);
 }
 
-export function imageSlot(id: AssetId, className = ""): HTMLElement {
+/**
+ * Imagem oficial. Se ela ainda não existe, tenta a arte oficial de reserva
+ * (`fallback`) e, sem nenhuma das duas, mostra o marcador neutro.
+ */
+export function imageSlot(id: AssetId, className = "", fallback?: AssetId): HTMLElement {
   const slot = h("div", { class: `slot ${className}`.trim() });
   slot.dataset.asset = id;
   const img = new Image();
   img.alt = "";
   img.draggable = false;
   img.onerror = () => {
+    if (fallback && !slot.classList.contains("fallback")) {
+      slot.classList.add("fallback");
+      slot.dataset.asset = fallback;
+      img.src = assetUrl(fallback);
+      return;
+    }
     slot.classList.add("missing");
     slot.replaceChildren(placeholder(id));
   };

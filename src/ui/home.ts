@@ -35,7 +35,7 @@ export function renderHome(root: HTMLElement, progress: Progress, onPlay: (phase
     list.append(btn);
   }
 
-  const zig = imageSlot("zig-acenando", "home-zig");
+  const zig = imageSlot("zig-acenando", "home-zig", "zig-rosto");
   zig.addEventListener("click", () => void say(FALAS.comecar));
 
   root.replaceChildren(
@@ -52,7 +52,7 @@ export function renderHome(root: HTMLElement, progress: Progress, onPlay: (phase
 export function renderPause(root: HTMLElement, onDone: () => void): void {
   root.replaceChildren(
     h("div", { class: "screen pause" }, [
-      imageSlot("zig-pensando", "home-zig"),
+      imageSlot("zig-pensando", "home-zig", "zig-rosto"),
       h("span", { class: "challenge-icon", text: "🏠🔬" }),
       captionBar().el,
       iconButton("🏠", "Voltar para o início", onDone, "next-btn static"),

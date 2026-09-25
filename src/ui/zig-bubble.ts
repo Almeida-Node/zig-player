@@ -4,7 +4,7 @@
 // Não há animação da Zig por código.
 
 import type { AssetId } from "../content/assets";
-import { assetUrl, placeholder } from "../core/assets";
+import { assetUrl } from "../core/assets";
 import { h } from "../core/dom";
 
 export type Reaction = "comemora" | "hum" | "surpresa" | "aponta";
@@ -30,11 +30,17 @@ export function createZigBubble(): ZigBubble {
   const label = h("div", { class: "zig-bubble-reaction" });
   el.append(video, label);
 
+  // Enquanto os clipes de movimento não existem, a bolha mostra o retrato
+  // oficial da Zig (parado). Nunca uma Zig desenhada pelo código.
   let showingPlaceholder = false;
-  const showPlaceholder = (id: AssetId) => {
+  const showPlaceholder = (_id: AssetId) => {
     showingPlaceholder = true;
-    el.classList.add("missing");
-    el.replaceChildren(placeholder(id), label);
+    el.classList.add("still");
+    const face = new Image();
+    face.alt = "";
+    face.className = "zig-bubble-face";
+    face.src = assetUrl("zig-rosto");
+    el.replaceChildren(face, label);
   };
 
   const playIdle = () => {
@@ -50,10 +56,15 @@ export function createZigBubble(): ZigBubble {
     el,
     react(reaction) {
       const id = REACTIONS[reaction];
-      // Sem os clipes, o marcador mostra qual reação entraria aqui.
+      // Sem os clipes, o retrato dá um pulinho e a reação fica anotada (para quem testa).
       label.textContent = reaction;
       el.dataset.reaction = reaction;
-      if (showingPlaceholder) return pause(900);
+      if (showingPlaceholder) {
+        el.classList.remove("bounce");
+        void el.offsetWidth;
+        el.classList.add("bounce");
+        return pause(900);
+      }
       return new Promise((resolve) => {
         const back = () => {
           playIdle();

@@ -16,6 +16,12 @@ export interface AssetSpec {
 
 export const ASSETS = {
   // Zig (sempre da imagem de referência oficial)
+  "zig-rosto": {
+    kind: "image",
+    file: "zig/zig-rosto.png",
+    what: "Retrato oficial da Zig (foto de perfil), fundo branco",
+    source: "Drive: PROFESSORA-ZIG/Persona/foto-perfil.png",
+  },
   "zig-acenando": {
     kind: "image",
     file: "zig/zig-acenando.png",
