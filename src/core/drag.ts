@@ -5,6 +5,7 @@ export interface DragOptions {
   /** Chamado ao soltar. Retorne true para deixar o objeto onde caiu. */
   onDrop(clientX: number, clientY: number): boolean;
   onStart?(): void;
+  onMove?(clientX: number, clientY: number): void;
 }
 
 export function makeDraggable(el: HTMLElement | SVGElement, options: DragOptions): () => void {
@@ -31,6 +32,7 @@ export function makeDraggable(el: HTMLElement | SVGElement, options: DragOptions
   const move = (e: PointerEvent) => {
     if (e.pointerId !== pointerId) return;
     setOffset(e.clientX - startX, e.clientY - startY);
+    options.onMove?.(e.clientX, e.clientY);
   };
 
   const up = (e: PointerEvent) => {

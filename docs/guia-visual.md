@@ -26,8 +26,9 @@ ondas, pontinhos, estrela, sempre em ciano `#22D3EE`.
 
 | Material | Origem | Formato no jogo |
 |---|---|---|
-| Zig reagindo (pergunta, "ahá!", comemora, curiosa) | Clipes do Google Flow do episódio, ou clipes curtos novos com o mesmo cabeçalho fixo | `.mp4` 9:16 curto, sem música |
-| Zig parada ao lado da cena interativa | ChatGPT (projeto "Canal Professora Zig") com a imagem de referência anexada | `.png` com fundo transparente |
+| Zig na pergunta, descoberta e resposta | Os 3 clipes do episódio | `.mp4` 9:16, tela cheia |
+| Zig reagindo durante os testes (bolha) | Clipes curtos do Flow que começam e terminam na **pose base** | `.mp4` ~3 s, sem som |
+| Zig parada (início, pausa) | ChatGPT (projeto "Canal Professora Zig") com a imagem de referência anexada | `.png` com fundo transparente |
 | Cenário da fase | Último frame aprovado do clipe (`epXX-clipeN-ultimo-frame.png`) ou versão sem a Zig gerada a partir dele | `.png`/`.webp` 1080×1920 |
 | Objetos para arrastar | ChatGPT, mesmo estilo 3D e mesma luz do cenário | `.png` transparente |
 | Falas da Zig | Áudio dos clipes (fala literal do roteiro) e falas extras geradas com o mesmo Elemento de voz | `.mp3` |
