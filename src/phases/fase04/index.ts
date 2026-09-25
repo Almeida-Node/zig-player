@@ -7,9 +7,9 @@ import { imageSlot } from "../../core/assets";
 import { h } from "../../core/dom";
 import { isInside, makeDraggable } from "../../core/drag";
 import type { PhaseContext, PhaseFlow, PhaseScript } from "../../game/types";
+import { placeAt, speaker, starElement, starShape, svg, toViewBox, wait } from "../shared";
 import { GRID, OBJECTS, OBJECT_IDS, TouchLab, fitsSlot, gridLines, nearestNode, type ObjectId } from "./logic";
 
-const SVG_NS = "http://www.w3.org/2000/svg";
 const CONSTELLATION = [
   { x: 10, y: 12 },
   { x: 22, y: 7 },
@@ -51,21 +51,8 @@ function mountFase04(ctx: PhaseContext): PhaseFlow {
   glass.append(defs, litGrid, effects);
 
   let lastStar = { x: 30, y: 50 };
-  let speaking = false;
-  const speakIfFree = async (line: (typeof FALAS)[keyof typeof FALAS]) => {
-    if (speaking) return;
-    speaking = true;
-    await ctx.say(line);
-    speaking = false;
-  };
-
-  const toGlass = (clientX: number, clientY: number) => {
-    const r = glass.getBoundingClientRect();
-    return {
-      x: ((clientX - r.left) / r.width) * GRID.width,
-      y: ((clientY - r.top) / r.height) * GRID.height,
-    };
-  };
+  const zig = speaker(ctx.say);
+  const toGlass = (clientX: number, clientY: number) => toViewBox(glass, GRID.width, GRID.height, clientX, clientY);
 
   const lightAt = (x: number, y: number) => {
     const node = nearestNode(x, y);
@@ -92,9 +79,7 @@ function mountFase04(ctx: PhaseContext): PhaseFlow {
       lastStar = { x: node.x, y: node.y };
       if (outcome.firstDiscovery) {
         void ctx.react("surpresa");
-        speaking = true;
-        await ctx.say(FALAS.f4Rede);
-        speaking = false;
+        await zig.now(FALAS.f4Rede);
         resolveDiscovery();
       } else {
         void ctx.react("comemora");
@@ -103,7 +88,7 @@ function mountFase04(ctx: PhaseContext): PhaseFlow {
       litGrid.classList.remove("on");
       ripple(p.x, p.y, "f4-thud");
       void ctx.react("hum");
-      await speakIfFree(outcome.afterDiscovery && id === "lapis" ? FALAS.f4Lapis : FALAS.hum);
+      await zig.ifFree(outcome.afterDiscovery && id === "lapis" ? FALAS.f4Lapis : FALAS.hum);
     }
   };
 
@@ -135,7 +120,7 @@ function mountFase04(ctx: PhaseContext): PhaseFlow {
 
   return {
     async question() {
-      await ctx.playClip("f4-clipe-pergunta", FALAS.f4Pergunta);
+      await ctx.playClip("f4-clipe-pergunta", [FALAS.f4Pergunta]);
       await ctx.waitForNext();
     },
 
@@ -143,20 +128,17 @@ function mountFase04(ctx: PhaseContext): PhaseFlow {
       tablet.classList.add("testing");
       tray.classList.add("show");
       void ctx.react("aponta");
-      speaking = true;
-      await ctx.say(FALAS.f4Testar);
-      speaking = false;
+      await zig.now(FALAS.f4Testar);
       await discovery;
       await ctx.waitForNext();
       tablet.classList.remove("testing");
       tray.classList.remove("show");
       cleanups.forEach((c) => c());
-      await ctx.playClip("f4-clipe-descoberta", FALAS.f4Clipe2);
+      await ctx.playClip("f4-clipe-descoberta", [FALAS.f4Rede, FALAS.f4Lapis]);
     },
 
     async answer() {
-      await ctx.playClip("f4-clipe-resposta", FALAS.f4Clipe3);
-      await ctx.say(FALAS.f4Resposta);
+      await ctx.playClip("f4-clipe-resposta", [FALAS.f4Resposta]);
 
       // A criança repete o gesto: leva a estrela até a constelação.
       const sky = svg("g", { class: "f4-sky" });
@@ -170,8 +152,7 @@ function mountFase04(ctx: PhaseContext): PhaseFlow {
       sky.append(svg("circle", { cx: SLOT.x, cy: SLOT.y, r: 4, class: "f4-slot" }));
       effects.replaceChildren(sky);
 
-      const star = h("div", { class: "f4-drag-star", label: "Estrela" });
-      star.innerHTML = `<svg viewBox="-5 -5 10 10">${starPath(0, 0, 4.5)}</svg>`;
+      const star = starElement("drag-star");
       placeInGlass(star, lastStar);
       glassArea.append(star);
       lightAt(lastStar.x, lastStar.y);
@@ -212,32 +193,5 @@ function mountFase04(ctx: PhaseContext): PhaseFlow {
 }
 
 function placeInGlass(el: HTMLElement, p: { x: number; y: number }) {
-  el.style.left = `${(p.x / GRID.width) * 100}%`;
-  el.style.top = `${(p.y / GRID.height) * 100}%`;
-}
-
-function starPath(cx: number, cy: number, r: number): string {
-  const points: string[] = [];
-  for (let i = 0; i < 10; i++) {
-    const radius = i % 2 === 0 ? r : r * 0.45;
-    const angle = (Math.PI / 5) * i - Math.PI / 2;
-    points.push(`${(cx + radius * Math.cos(angle)).toFixed(2)},${(cy + radius * Math.sin(angle)).toFixed(2)}`);
-  }
-  return `<polygon points="${points.join(" ")}" />`;
-}
-
-function starShape(cx: number, cy: number, r: number, cls: string): SVGElement {
-  const g = svg("g", { class: cls });
-  g.innerHTML = starPath(cx, cy, r);
-  return g;
-}
-
-function svg(tag: string, attrs: Record<string, string | number> = {}): SVGElement {
-  const el = document.createElementNS(SVG_NS, tag) as SVGElement;
-  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, String(v));
-  return el;
-}
-
-function wait(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+  placeAt(el, p, GRID.width, GRID.height);
 }

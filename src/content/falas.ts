@@ -28,6 +28,92 @@ export const FALAS = {
   trancada: { text: "Essa fase abre quando você terminar a anterior!", highlight: "anterior", audio: "voz-trancada" },
   emBreve: { text: "Essa fase chega junto com o episódio!", highlight: "episódio", audio: "voz-em-breve" },
 
+  // Fase 1 — falas literais do Ep 01 (roteiro mestre, Dia 01)
+  f1Pergunta: {
+    text: "Como a máquina sabe qual fruta apareceu? Vamos ensinar com exemplos!",
+    highlight: "exemplos",
+    audio: "f1-voz-pergunta",
+  },
+  f1Ensine: {
+    text: "Mostre os cartões para a máquina: maçã num cesto, banana no outro!",
+    highlight: "cartões",
+    audio: "f1-voz-ensine",
+  },
+  f1ExemploErrado: { text: "Hum… será que esse exemplo ensina certo?", highlight: "exemplo", audio: "f1-voz-exemplo-errado" },
+  f1VezMaquina: { text: "Agora é a vez da máquina. Olha as pistas!", highlight: "pistas", audio: "f1-voz-vez-maquina" },
+  f1Acertou: { text: "Ela acertou sozinha!", highlight: "sozinha", audio: "f1-voz-acertou" },
+  f1AprendeuErrado: {
+    text: "Ops! Ela aprendeu com o exemplo errado.",
+    highlight: "errado",
+    audio: "f1-voz-aprendeu-errado",
+  },
+  f1Descoberta: {
+    text: "Mostramos muitos exemplos. Ela procura pistas e também pode errar.",
+    highlight: "exemplos",
+    audio: "f1-voz-descoberta",
+  },
+  f1Confere: { text: "Por isso, uma pessoa confere a resposta.", highlight: "confere", audio: "f1-voz-confere" },
+  f1Corrija: { text: "Leve o cartão para o cesto certo!", highlight: "certo", audio: "f1-voz-corrija" },
+  f1Pista: { text: "Qual pista você viu?", highlight: "pista", audio: "f1-voz-pista" },
+  f1Desafio: {
+    text: "Com um adulto, separe frutas ou brinquedos em dois grupos e peça para alguém adivinhar a sua regra. Qual pista ajudou?",
+    highlight: "pista",
+    audio: "f1-voz-desafio",
+  },
+
+  // Fase 2 — O robô vê no escuro? (versão corrigida em roteiro-ajustes.md: eco, sem lanterna)
+  f2Pergunta: { text: "Está escuro! Como o robô vai perceber o caminho?", highlight: "escuro", audio: "f2-voz-pergunta" },
+  f2Teste: {
+    text: "Vamos testar: o robô vai só com os olhos, ou com o sensor?",
+    highlight: "sensor",
+    audio: "f2-voz-teste",
+  },
+  f2Bateu: { text: "Opa! No escuro, os olhos dele não viram o bloco.", highlight: "bloco", audio: "f2-voz-bateu" },
+  f2Eco: {
+    text: "Ele manda um sinal que bate no bloco e volta, igual ao eco do morcego!",
+    highlight: "eco",
+    audio: "f2-voz-eco",
+  },
+  f2MovaBloco: { text: "Mude o bloco de lugar e teste de novo!", highlight: "bloco", audio: "f2-voz-mova-bloco" },
+  f2Resposta: {
+    text: "Ele não precisou adivinhar. O sensor ajudou a desviar!",
+    highlight: "sensor",
+    audio: "f2-voz-resposta",
+  },
+  f2LeveRobo: { text: "Agora leve o robô até a estrela, no escuro!", highlight: "estrela", audio: "f2-voz-leve-robo" },
+  f2Luz: { text: "Olha o bloco que ele evitou!", highlight: "bloco", audio: "f2-voz-luz" },
+  f2Desafio: {
+    text: "Com um adulto, feche os olhos e procure um brinquedo na mesa só com as mãos, bem devagar. Suas mãos foram o sensor!",
+    highlight: "sensor",
+    audio: "f2-voz-desafio",
+  },
+
+  // Fase 3 — falas literais do Ep 03 (roteiro mestre, Dia 03)
+  f3Pergunta: {
+    text: "Será que a imagem é feita de pontinhos minúsculos?",
+    highlight: "pontinhos",
+    audio: "f3-voz-pergunta",
+  },
+  f3UseLupa: { text: "Pegue a lupa e olhe a tela bem de perto!", highlight: "lupa", audio: "f3-voz-use-lupa" },
+  f3Pixels: {
+    text: "Muitos pontinhos de luz, chamados pixels, formam o que vemos.",
+    highlight: "pixels",
+    audio: "f3-voz-pixels",
+  },
+  f3Cores: { text: "Olhe outras cores da borboleta!", highlight: "cores", audio: "f3-voz-cores" },
+  f3TresCores: {
+    text: "Só vermelho, verde e azul! Juntinhos, fazem todas as cores.",
+    highlight: "azul",
+    audio: "f3-voz-tres-cores",
+  },
+  f3Afaste: { text: "Agora afaste a lupa bem devagar.", highlight: "afaste", audio: "f3-voz-afaste" },
+  f3Resposta: { text: "De perto são pontos; de longe, uma borboleta!", highlight: "borboleta", audio: "f3-voz-resposta" },
+  f3Desafio: {
+    text: "Com um adulto, olhe a tela da TV ou do celular com uma lupa, bem de pertinho. Que cores você viu?",
+    highlight: "lupa",
+    audio: "f3-voz-desafio",
+  },
+
   // Fase 4 — falas literais do Ep 04 (EP04-guia-de-producao.md)
   f4Pergunta: {
     text: "Eu toquei aqui e a estrela apareceu! Como a tela sabe onde eu toquei?",
@@ -56,15 +142,6 @@ export const FALAS = {
     audio: "f4-voz-leve-estrela",
   },
   f4Mapa: { text: "Ué… e esse pontinho no mapa?", highlight: "mapa", audio: "f4-voz-mapa" },
-  // Legendas dos clipes (o áudio já está no próprio clipe)
-  f4Clipe2: {
-    text: "Embaixo do vidro tem uma rede que sente a energia do meu toque. O lápis, ela não sente!",
-    highlight: "rede",
-  },
-  f4Clipe3: {
-    text: "A rede avisa onde foi o toque, e a tela responde. Ué… e esse pontinho no mapa?",
-    highlight: "responde",
-  },
   f4Desafio: {
     text: "Com um adulto, toque a tela do celular com o dedo e depois com a ponta de madeira de um lápis. O que aconteceu?",
     highlight: "lápis",

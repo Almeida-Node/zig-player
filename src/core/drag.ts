@@ -11,10 +11,13 @@ export interface DragOptions {
 export function makeDraggable(el: HTMLElement | SVGElement, options: DragOptions): () => void {
   let startX = 0;
   let startY = 0;
+  // Onde o objeto ficou da última vez que foi aceito (onDrop devolveu true).
+  let baseX = 0;
+  let baseY = 0;
   let pointerId: number | null = null;
 
   const setOffset = (dx: number, dy: number) => {
-    el.style.transform = `translate(${dx}px, ${dy}px)`;
+    el.style.transform = `translate(${baseX + dx}px, ${baseY + dy}px)`;
   };
 
   const down = (e: PointerEvent) => {
@@ -40,7 +43,10 @@ export function makeDraggable(el: HTMLElement | SVGElement, options: DragOptions
     pointerId = null;
     el.classList.remove("dragging");
     const keep = options.onDrop(e.clientX, e.clientY);
-    if (!keep) {
+    if (keep) {
+      baseX += e.clientX - startX;
+      baseY += e.clientY - startY;
+    } else {
       el.style.transition = "transform 350ms ease-out";
       setOffset(0, 0);
     }

@@ -53,13 +53,14 @@ export function runPhase(
   // Promessas de uma fase cancelada ficam pendentes para sempre: nada roda depois de sair.
   const guard = <T>(p: Promise<T>): Promise<T> => (signal.aborted ? new Promise<T>(() => undefined) : p.then((v) => (signal.aborted ? new Promise<T>(() => undefined) : v)));
 
-  const playClip = async (id: Parameters<PhaseContext["playClip"]>[0], line: Line) => {
+  const playClip = async (id: Parameters<PhaseContext["playClip"]>[0], lines: readonly Line[]) => {
     const clip = videoSlot(id, "clip");
     overlay.replaceChildren(clip.el);
     overlay.hidden = false;
-    showCaption(line);
+    const joined: Line = { text: lines.map((l) => l.text).join(" "), highlight: lines[0]?.highlight };
+    showCaption(joined);
     const played = await clip.play(isMuted());
-    if (!played) await say(line); // sem o clipe: marcador na tela + voz
+    if (!played) for (const line of lines) await say(line); // sem o clipe: marcador + as mesmas falas
     showCaption(null);
     overlay.hidden = true;
     overlay.replaceChildren();
@@ -79,7 +80,7 @@ export function runPhase(
     stage,
     signal,
     say: (line) => guard(say(line)),
-    playClip: (id, line) => guard(playClip(id, line)),
+    playClip: (id, lines) => guard(playClip(id, lines)),
     react: (r) => guard(bubble.react(r)),
     waitForNext: () => guard(waitForNext()),
     hideNext: () => (next.hidden = true),

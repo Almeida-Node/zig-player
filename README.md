@@ -22,8 +22,13 @@ npm run arte     # quais artes oficiais já estão em public/arte/
 
 | Fase | Episódio | Situação |
 |---|---|---|
-| 4 | Por que a tela me escuta? | Jogável, com marcadores no lugar das artes |
-| 1–3, 5–6 | | "Em breve" (entram com seus episódios) |
+| 1 | Como a IA aprende? | Jogável, com marcadores no lugar das artes |
+| 2 | O robô vê no escuro? | Jogável (versão sem lanterna, com eco), com marcadores |
+| 3 | Quem mora dentro da tela? | Jogável, com marcadores |
+| 4 | Por que a tela me escuta? | Jogável, com marcadores |
+| 5–6 | | "Em breve" (entram com seus episódios) |
+
+As fases abrem em ordem: cada uma abre quando a anterior ganha a estrela de descoberta.
 
 ## Como funciona
 

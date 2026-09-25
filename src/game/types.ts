@@ -8,8 +8,11 @@ export interface PhaseContext {
   stage: HTMLElement;
   /** A Zig fala (áudio oficial ou voz provisória) com legenda. */
   say(line: Line): Promise<void>;
-  /** Toca um clipe do episódio com a legenda da fala; sem o clipe, mostra o marcador e fala. */
-  playClip(video: AssetId, line: Line): Promise<void>;
+  /**
+   * Toca um clipe do episódio com a legenda das falas dele; sem o clipe,
+   * mostra o marcador e a Zig diz as mesmas falas (áudio gravado ou voz provisória).
+   */
+  playClip(video: AssetId, lines: readonly Line[]): Promise<void>;
   /** A Zig reage na bolha com um clipe curto do Flow. */
   react(reaction: Reaction): Promise<void>;
   /** Mostra o botão ▶ e espera a criança tocar. */

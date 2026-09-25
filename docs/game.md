@@ -30,15 +30,15 @@ A criança ganha uma **estrela de descoberta** e desbloqueia o mistério da fase
 ## Fases iniciais (Ep 01 a Ep 06)
 
 **Fase 1 — Como a IA aprende?**
-A Zig mostra cartões com desenhos de gatos e cachorros. A criança separa os cartões em dois grupos; depois de alguns exemplos, o "robozinho aprendiz" começa a acertar sozinho.
-Descoberta: a IA aprende vendo muitos exemplos. Se a criança colocar um cartão no grupo errado, o robozinho erra junto, e a Zig mostra que exemplos errados ensinam errado.
+Como no Ep 01, a Zig mostra cartões de maçãs e bananas para a máquina curiosa. A criança separa os cartões em dois cestos; depois de alguns exemplos, a máquina tenta sozinha, procurando pistas com um feixe ciano.
+Descoberta: a IA aprende vendo muitos exemplos. Se a criança colocar um cartão no cesto errado, a máquina aprende errado junto. Na resposta, a máquina erra um cartão difícil (uma maçã amarelada) e a criança confere e corrige: "uma pessoa confere a resposta".
 
 **Fase 2 — O robô vê no escuro?**
-O quarto fica escuro. A criança testa o robô com os "olhos" normais e depois liga o sensor. O sensor mostra pontinhos que medem a distância até os móveis e o robô desvia.
-Descoberta: o robô não enxerga como a gente, ele mede o caminho com sensores. (Sem lanterna: a luz não é a resposta, como ficou definido em `_qualidade/roteiro-ajustes.md`.)
+O quarto fica escuro. A criança testa o robô só com os "olhos" (ele esbarra no bloco de madeira) e depois com o sensor: ondas ciano saem do robô, batem no bloco e voltam, "igual ao eco do morcego", e ele desvia. Dá para mudar o bloco de lugar e testar de novo. Na resposta, a criança leva o robô pelo escuro e, só no fim, a luz acende e mostra o bloco.
+Descoberta: o robô não enxerga como a gente, ele percebe o caminho com sensores. (Sem lanterna: a luz não é a resposta, como ficou definido em `_qualidade/roteiro-ajustes.md`.)
 
 **Fase 3 — Quem mora dentro da tela?**
-A criança dá zoom numa tela até ver os pontinhos coloridos (pixels) que formam a imagem da Zig.
+Como no Ep 03, a tela mostra uma borboleta colorida. A criança leva a lupa até a tela e vê que cada pedacinho é feito de pontinhos vermelhos, verdes e azuis (pixels). Na resposta, ela afasta a lupa devagar e os pontinhos se juntam até a borboleta aparecer inteira.
 Descoberta: ninguém mora ali; a imagem é feita de milhares de pontinhos de luz.
 
 **Fase 4 — Por que a tela me escuta?**

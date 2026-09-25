@@ -53,6 +53,52 @@ permitir, também o final) de todos os clipes M1–M5.
 
 Se alguma sair com fundo branco, peça no mesmo chat: *"A mesma imagem, idêntica, com fundo transparente."*
 
+### Fase 1 — Como a IA aprende? (cartões de maçãs e bananas)
+
+Anexe um frame do Ep 01 (laboratório com cartões de frutas e a máquina curiosa).
+
+**F1-1 — `fase01/cenario.png`**
+> [CABEÇALHO FIXO] Sem a Zig nesta imagem. Vista de cima da mesa do laboratório aconchegante do Ep 01, madeira clara, luz quente de fim de tarde, alguns cartões de frutas espalhados só nas bordas. O centro fica livre (o jogo coloca máquina, cestos e cartões por cima). Formato vertical 9:16, 1080×1920.
+
+**F1-2 — `fase01/maquina.png`**
+> A mesma máquina curiosa do Ep 01, sozinha, de frente, com uma janelinha na frente onde o cartão aparece, expressão curiosa e fofa, sem letras, sem números, sem telas com texto. Estilo 3D da série, luz quente. **Fundo transparente (PNG).** Formato 4:3, 1200×900.
+
+**F1-3 — `fase01/cesto.png`**
+> Um cesto raso de madeira clara, vazio, visto um pouco de cima, estilo 3D da série. **Fundo transparente (PNG).** Formato 4:3.
+
+**F1-4 / F1-5 / F1-6 — cartões** (`fase01/cartao-maca.png`, `cartao-banana.png`, `cartao-dificil.png`)
+> Cartão retangular de papel creme com cantos arredondados, na vertical, com o desenho simples e fofo de [uma maçã vermelha | uma banana amarela | uma maçã AMARELADA, quase da cor de banana], no mesmo estilo dos cartões do Ep 01. Sem letras nem números. **Fundo transparente (PNG).** Formato 3:4, 600×800.
+
+Os três cartões precisam ter o **mesmo** papel e o **mesmo** estilo. Gere os três no mesmo chat.
+
+### Fase 2 — O robô vê no escuro? (sem lanterna)
+
+A fase segue a **versão corrigida** do `_qualidade/roteiro-ajustes.md`: sem lanterna e com o bloco de madeira como objeto de continuidade. O jogo escurece o quarto sozinho, então o cenário vem **com a luz acesa**.
+
+**F2-1 — `fase02/cenario.png`**
+> [CABEÇALHO FIXO] Sem a Zig nesta imagem. Chão do quarto de experiências do Ep 02 visto exatamente de cima, piso de madeira ou tapete macio, luz acesa e quente, alguns móveis só nas bordas. O centro fica vazio. Formato 3:5, 1080×1800.
+
+**F2-2 — `fase02/robo.png`**
+> O mesmo robô pequeno do Ep 02, visto exatamente de cima, frente virada para cima da imagem, olhos que brilham de leve, um sensor redondo na frente. Sem letras. **Fundo transparente (PNG).** Quadrado 1:1, 768×768.
+
+**F2-3 — `fase02/bloco.png`**
+> Um bloco de madeira de brinquedo visto exatamente de cima, cantos arredondados, madeira clara. **Fundo transparente (PNG).** Quadrado 1:1, 768×768.
+
+**Clipes do Ep 02:** os clipes publicados usam lanterna, o que contradiz a lição. O jogo só usa `fase02/ep02-clipe*.mp4` se forem **refeitos** com as correções do Dia 02 em `roteiro-ajustes.md`. Enquanto isso, o jogo mostra o marcador e a Zig fala as mesmas frases.
+
+### Fase 3 — Quem mora dentro da tela? (lupa e borboleta)
+
+**F3-1 — `fase03/cenario.png`**
+> [CABEÇALHO FIXO] Sem a Zig nesta imagem. O laboratório do Ep 03 com a tela grande apagada no centro, vista de frente, luz quente de fim de tarde. A tela fica preta e vazia (o jogo desenha a imagem dentro dela). Formato vertical 9:16, 1080×1920.
+
+**F3-2 — `fase03/borboleta.png`**
+> Uma borboleta colorida e alegre, de frente, com áreas grandes de **vermelho forte, verde forte e azul forte** nas asas, em fundo azul-escuro liso. Estilo 3D suave da série. Sem letras. Formato 3:4, 900×1200.
+
+As três cores fortes importam: a criança procura o vermelho, o verde e o azul com a lupa.
+
+**F3-3 — `fase03/lupa.png`**
+> A mesma lupa do Ep 03, sozinha, com o vidro redondo no **alto à esquerda** e o cabo descendo para a direita, vidro transparente. **Fundo transparente (PNG).** Quadrado 1:1, 768×768.
+
 ### Fase 4 — Por que a tela me escuta?
 
 Anexe também `ep04-clipe1-ultimo-frame.png`, para manter a mesma madeira, as mesmas cores e a mesma luz.
@@ -130,6 +176,20 @@ ffmpeg -i ep04-clipe2-descoberta.mp4 -vn -ss 0.4 -to 4.6 -af loudnorm=I=-14:TP=-
 ```
 (Os tempos `-ss`/`-to` saem das pausas da voz, os mesmos usados em `gerar_legendas.py`.)
 
+Nos Ep 01 e Ep 03, recorte da mesma forma:
+
+| Arquivo | Texto | De onde recortar |
+|---|---|---|
+| `fase01/voz-pergunta.mp3` | "Como a máquina sabe qual fruta apareceu? Vamos ensinar com exemplos!" | clipe 1 do Ep 01 |
+| `fase01/voz-descoberta.mp3` | "Mostramos muitos exemplos. Ela procura pistas e também pode errar." | clipe 2 do Ep 01 |
+| `fase01/voz-confere.mp3` | "Por isso, uma pessoa confere a resposta." | clipe 3 do Ep 01, 1ª frase |
+| `fase01/voz-pista.mp3` | "Qual pista você viu?" | clipe 3 do Ep 01, 2ª frase |
+| `fase03/voz-pergunta.mp3` | "Será que a imagem é feita de pontinhos minúsculos?" | clipe 1 do Ep 03 |
+| `fase03/voz-pixels.mp3` | "Muitos pontinhos de luz, chamados pixels, formam o que vemos." | clipe 2 do Ep 03 |
+| `fase03/voz-resposta.mp3` | "De perto são pontos; de longe, uma borboleta!" | clipe 3 do Ep 03 |
+
+Se o áudio publicado não bater palavra por palavra com o texto, gere a fala de novo no Flow (prompt V abaixo).
+
 **2. Falas novas do jogo.** Prompt V no Flow, com P0 como quadro inicial:
 > [CABEÇALHO FIXO] Plano médio fixo, Zig centralizada, fundo do laboratório desfocado. Zig fala olhando para a câmera, com carinho: "[FALA]". Uma única fala literal, sem outras falas, sem narrador, sem música.
 
@@ -146,6 +206,27 @@ Depois é só extrair o áudio (`-vn`, com o mesmo `loudnorm`). Dá para pôr **
 | `comum/voz-pausa.mp3` | "Que tal uma pausa? Chame um adulto e faça um experimento de verdade!" |
 | `comum/voz-trancada.mp3` | "Essa fase abre quando você terminar a anterior!" |
 | `comum/voz-em-breve.mp3` | "Essa fase chega junto com o episódio!" |
+| `fase01/voz-ensine.mp3` | "Mostre os cartões para a máquina: maçã num cesto, banana no outro!" |
+| `fase01/voz-exemplo-errado.mp3` | "Hum… será que esse exemplo ensina certo?" |
+| `fase01/voz-vez-maquina.mp3` | "Agora é a vez da máquina. Olha as pistas!" |
+| `fase01/voz-acertou.mp3` | "Ela acertou sozinha!" |
+| `fase01/voz-aprendeu-errado.mp3` | "Ops! Ela aprendeu com o exemplo errado." |
+| `fase01/voz-corrija.mp3` | "Leve o cartão para o cesto certo!" |
+| `fase01/voz-desafio.mp3` | "Com um adulto, separe frutas ou brinquedos em dois grupos e peça para alguém adivinhar a sua regra. Qual pista ajudou?" |
+| `fase02/voz-pergunta.mp3` | "Está escuro! Como o robô vai perceber o caminho?" |
+| `fase02/voz-teste.mp3` | "Vamos testar: o robô vai só com os olhos, ou com o sensor?" |
+| `fase02/voz-bateu.mp3` | "Opa! No escuro, os olhos dele não viram o bloco." |
+| `fase02/voz-eco.mp3` | "Ele manda um sinal que bate no bloco e volta, igual ao eco do morcego!" |
+| `fase02/voz-mova-bloco.mp3` | "Mude o bloco de lugar e teste de novo!" |
+| `fase02/voz-resposta.mp3` | "Ele não precisou adivinhar. O sensor ajudou a desviar!" |
+| `fase02/voz-leve-robo.mp3` | "Agora leve o robô até a estrela, no escuro!" |
+| `fase02/voz-luz.mp3` | "Olha o bloco que ele evitou!" |
+| `fase02/voz-desafio.mp3` | "Com um adulto, feche os olhos e procure um brinquedo na mesa só com as mãos, bem devagar. Suas mãos foram o sensor!" |
+| `fase03/voz-use-lupa.mp3` | "Pegue a lupa e olhe a tela bem de perto!" |
+| `fase03/voz-cores.mp3` | "Olhe outras cores da borboleta!" |
+| `fase03/voz-tres-cores.mp3` | "Só vermelho, verde e azul! Juntinhos, fazem todas as cores." |
+| `fase03/voz-afaste.mp3` | "Agora afaste a lupa bem devagar." |
+| `fase03/voz-desafio.mp3` | "Com um adulto, olhe a tela da TV ou do celular com uma lupa, bem de pertinho. Que cores você viu?" |
 | `fase04/voz-testar.mp3` | "Vamos testar! Leve cada coisa até a tela, ou toque com o seu dedo." |
 | `fase04/voz-leve-estrela.mp3` | "Leve a estrela até as amigas dela lá em cima!" |
 | `fase04/voz-desafio.mp3` | "Com um adulto, toque a tela do celular com o dedo e depois com a ponta de madeira de um lápis. O que aconteceu?" |
@@ -158,6 +239,11 @@ As falas comuns servem para todas as fases. Cada fase nova precisa só das suas 
 
 | Destino em `public/arte/` | Origem no Drive (PROFESSORA-ZIG) |
 |---|---|
+| `fase01/ep01-clipe1-pergunta.mp4` | `FOTOS/EPISODIO-01-como a IA aprende/pergunta.mp4` |
+| `fase01/ep01-clipe2-descoberta.mp4` | `FOTOS/EPISODIO-01-como a IA aprende/raposa-faz-a-descoberta.mp4` |
+| `fase01/ep01-clipe3-resposta.mp4` | `FOTOS/EPISODIO-01-como a IA aprende/raposa-exibe-cartoes-resposta.mp4` |
+| `fase02/ep02-clipe{1,2,3}-*.mp4` | **refazer sem lanterna** (ver Fase 2 acima) |
+| `fase03/ep03-clipe{1,2,3}-*.mp4` | clipes brutos no computador (`Tik-tok/professora-zig-ep-02/`, segundo o CONTEXTO-ZIG) |
 | `fase04/ep04-clipe1-pergunta.mp4` | `Ep-04-por-que-a-tela-me-escuta/producao-ep04/clipes/` |
 | `fase04/ep04-clipe2-descoberta.mp4` | idem |
 | `fase04/ep04-clipe3-resposta.mp4` | idem |
